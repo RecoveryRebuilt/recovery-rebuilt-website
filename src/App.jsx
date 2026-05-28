@@ -1,8 +1,26 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, HardHat, Home, Leaf, Users, ShieldCheck, HeartHandshake, Building2, Mail, Phone, MapPin, CheckCircle2 } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+
+function cn(...classes) {
+  return classes.filter(Boolean).join(" ");
+}
+
+function Button({ children, className = "", variant = "default", ...props }) {
+  const base = "inline-flex items-center justify-center rounded-2xl font-bold transition focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 focus:ring-offset-neutral-950";
+  const styles = variant === "outline"
+    ? "border border-white/20 bg-white/5 text-white hover:bg-white hover:text-neutral-950"
+    : "bg-orange-600 text-white hover:bg-orange-500";
+  return <button className={cn(base, styles, className)} {...props}>{children}</button>;
+}
+
+function Card({ children, className = "" }) {
+  return <div className={cn("rounded-3xl border", className)}>{children}</div>;
+}
+
+function CardContent({ children, className = "" }) {
+  return <div className={className}>{children}</div>;
+}
 
 const divisions = [
   {
@@ -85,9 +103,7 @@ export default function RecoveryRebuiltWebsite() {
             <a href="#workforce" className="hover:text-orange-500">Workforce</a>
             <a href="#partners" className="hover:text-orange-500">Partners</a>
           </nav>
-          <a href="#contact" className="rounded-2xl bg-orange-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-orange-500">
-            Contact Us
-          </a>
+          <a href="#contact"><Button className="px-5 py-3">Contact Us</Button></a>
         </div>
       </header>
 
@@ -107,12 +123,8 @@ export default function RecoveryRebuiltWebsite() {
                 Recovery Rebuilt provides concrete, roofing, landscaping, and workforce services while creating real employment pathways for people rebuilding their lives. We combine dependable crews with structure, accountability, and recovery-informed support.
               </p>
               <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-                <a href="#contact" className="rounded-2xl bg-orange-600 px-7 py-4 text-center text-base font-black uppercase tracking-wide text-white transition hover:bg-orange-500">
-                  Request Work
-                </a>
-                <a href="#partners" className="rounded-2xl border border-white/20 bg-white/5 px-7 py-4 text-center text-base font-black uppercase tracking-wide text-white transition hover:bg-white hover:text-neutral-950">
-                  Partner With Us
-                </a>
+                <a href="#contact"><Button className="px-7 py-6 text-base font-black uppercase tracking-wide">Request Work</Button></a>
+                <a href="#partners"><Button variant="outline" className="px-7 py-6 text-base font-black uppercase tracking-wide">Partner With Us</Button></a>
               </div>
             </motion.div>
 
@@ -147,7 +159,7 @@ export default function RecoveryRebuiltWebsite() {
               {divisions.map((division) => {
                 const Icon = division.icon;
                 return (
-                  <Card key={division.name} className="rounded-3xl border-neutral-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+                  <Card key={division.name} className="border-neutral-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
                     <CardContent className="p-7">
                       <Icon className={`mb-6 h-10 w-10 ${division.accent}`} strokeWidth={2.5} />
                       <h3 className="mb-3 text-xl font-black uppercase tracking-wide">{division.name}</h3>
@@ -210,22 +222,10 @@ export default function RecoveryRebuiltWebsite() {
                 <HardHat className="h-12 w-12 text-orange-500" />
               </div>
               <div className="space-y-6">
-                <div>
-                  <p className="text-lg font-black uppercase text-white">Morning</p>
-                  <p className="mt-1 leading-7 text-neutral-400">Attendance, wellness checks, dispatch, and clear expectations for the day.</p>
-                </div>
-                <div>
-                  <p className="text-lg font-black uppercase text-white">During the Day</p>
-                  <p className="mt-1 leading-7 text-neutral-400">Job-site support, communication, coaching, and problem-solving when barriers appear.</p>
-                </div>
-                <div>
-                  <p className="text-lg font-black uppercase text-white">End of Day</p>
-                  <p className="mt-1 leading-7 text-neutral-400">Follow-up, documentation, supervisor feedback, and stabilization planning when needed.</p>
-                </div>
-                <div className="rounded-3xl bg-orange-600 p-6">
-                  <p className="text-xl font-black uppercase">Goal</p>
-                  <p className="mt-2 leading-7 text-orange-50">Help people stay sober, stay housed, stay employed, and build a future they can be proud of.</p>
-                </div>
+                <div><p className="text-lg font-black uppercase text-white">Morning</p><p className="mt-1 leading-7 text-neutral-400">Attendance, wellness checks, dispatch, and clear expectations for the day.</p></div>
+                <div><p className="text-lg font-black uppercase text-white">During the Day</p><p className="mt-1 leading-7 text-neutral-400">Job-site support, communication, coaching, and problem-solving when barriers appear.</p></div>
+                <div><p className="text-lg font-black uppercase text-white">End of Day</p><p className="mt-1 leading-7 text-neutral-400">Follow-up, documentation, supervisor feedback, and stabilization planning when needed.</p></div>
+                <div className="rounded-3xl bg-orange-600 p-6"><p className="text-xl font-black uppercase">Goal</p><p className="mt-2 leading-7 text-orange-50">Help people stay sober, stay housed, stay employed, and build a future they can be proud of.</p></div>
               </div>
             </div>
           </div>
@@ -244,17 +244,8 @@ export default function RecoveryRebuiltWebsite() {
               <div className="rounded-3xl bg-white p-7 text-neutral-950">
                 <h3 className="mb-5 text-2xl font-black uppercase">Partnership Focus</h3>
                 <div className="space-y-4">
-                  {[
-                    "Training and certification pathways",
-                    "Job placement and retention support",
-                    "Recovery-informed workforce development",
-                    "Employer partnerships and supported crews",
-                    "Grant-aligned program structure",
-                  ].map((item) => (
-                    <div key={item} className="flex gap-3">
-                      <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-orange-600" />
-                      <p className="font-semibold text-neutral-700">{item}</p>
-                    </div>
+                  {["Training and certification pathways", "Job placement and retention support", "Recovery-informed workforce development", "Employer partnerships and supported crews", "Grant-aligned program structure"].map((item) => (
+                    <div key={item} className="flex gap-3"><CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-orange-600" /><p className="font-semibold text-neutral-700">{item}</p></div>
                   ))}
                 </div>
               </div>
@@ -267,9 +258,7 @@ export default function RecoveryRebuiltWebsite() {
             <div>
               <p className="mb-3 text-sm font-black uppercase tracking-[0.24em] text-orange-600">Contact</p>
               <h2 className="text-4xl font-black uppercase tracking-tight md:text-5xl">Ready to build something stable?</h2>
-              <p className="mt-6 text-lg leading-8 text-neutral-600">
-                Reach out for concrete, roofing, landscaping, partnership conversations, workforce pathways, or employment opportunities.
-              </p>
+              <p className="mt-6 text-lg leading-8 text-neutral-600">Reach out for concrete, roofing, landscaping, partnership conversations, workforce pathways, or employment opportunities.</p>
               <div className="mt-8 space-y-4 text-neutral-700">
                 <div className="flex items-center gap-3"><Mail className="h-5 w-5 text-orange-600" /> j.fugalli@recoveryrebuilt.com</div>
                 <div className="flex items-center gap-3"><Phone className="h-5 w-5 text-orange-600" /> (507) 491-4387</div>
@@ -285,9 +274,7 @@ export default function RecoveryRebuiltWebsite() {
               </div>
               <input name="inquiry_type" className="mt-5 w-full rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-4 outline-none focus:border-orange-500" placeholder="What are you reaching out about?" />
               <textarea name="message" required className="mt-5 min-h-36 w-full rounded-2xl border border-neutral-200 bg-neutral-50 px-4 py-4 outline-none focus:border-orange-500" placeholder="Message" />
-              <button type="submit" className="mt-5 w-full rounded-2xl bg-orange-600 py-4 text-base font-black uppercase tracking-wide text-white transition hover:bg-orange-500">
-                Send Message
-              </button>
+              <button type="submit" className="mt-5 w-full rounded-2xl bg-orange-600 py-4 text-base font-black uppercase tracking-wide text-white transition hover:bg-orange-500">Send Message</button>
             </form>
           </div>
         </section>

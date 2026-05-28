@@ -87,10 +87,8 @@ export default function RecoveryRebuiltWebsite() {
       <header className="sticky top-0 z-50 border-b border-white/10 bg-neutral-950/90 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
-            <div className="relative flex h-11 w-16 items-center justify-center rounded-xl bg-white text-3xl font-black tracking-tighter text-neutral-950 shadow-lg">
-              <span>R</span>
-              <span className="text-orange-500">R</span>
-              <ArrowUpRight className="absolute right-3 top-2 h-4 w-4 text-white" strokeWidth={4} />
+            <div className="flex h-12 w-20 items-center justify-center rounded-xl bg-white p-2 shadow-lg">
+              <img src="/rr-mark.png" alt="Recovery Rebuilt RR mark" className="h-full w-full object-contain" />
             </div>
             <div>
               <p className="text-sm font-black uppercase tracking-[0.28em] text-white">Recovery Rebuilt</p>
@@ -129,16 +127,8 @@ export default function RecoveryRebuiltWebsite() {
             </motion.div>
 
             <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.15 }} className="relative z-10 flex items-center justify-center">
-              <div className="relative w-full max-w-md rounded-[2rem] border border-white/10 bg-white p-8 text-neutral-950 shadow-2xl">
-                <div className="mx-auto mb-5 flex h-28 w-40 items-center justify-center rounded-3xl bg-neutral-950 text-7xl font-black tracking-tighter text-white">
-                  <span>R</span><span className="text-orange-500">R</span>
-                </div>
-                <div className="text-center">
-                  <p className="text-4xl font-black uppercase tracking-wider">Recovery</p>
-                  <p className="text-4xl font-black uppercase tracking-[0.22em] text-orange-600">Rebuilt</p>
-                  <div className="mx-auto mt-4 h-1 w-24 bg-orange-600" />
-                  <p className="mt-5 text-sm font-black uppercase tracking-[0.26em] text-neutral-700">Strong. Purpose-driven. Built to grow.</p>
-                </div>
+              <div className="relative w-full max-w-xl rounded-[2rem] border border-white/10 bg-white p-8 text-neutral-950 shadow-2xl">
+                <img src="/rr-logo-full.png" alt="Recovery Rebuilt logo" className="mx-auto w-full max-w-lg object-contain" />
               </div>
             </motion.div>
           </div>

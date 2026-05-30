@@ -14,7 +14,14 @@ import {
   MapPin,
   CheckCircle2,
 } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+
+function Card({ children, className = "" }) {
+  return <div className={className}>{children}</div>;
+}
+
+function CardContent({ children, className = "" }) {
+  return <div className={className}>{children}</div>;
+}
 
 const divisions = [
   {
@@ -187,7 +194,10 @@ export default function RecoveryRebuiltWebsite() {
           </div>
         </section>
 
-        <section id="services" className="bg-neutral-100 px-6 py-20 text-neutral-950">
+        <section
+          id="services"
+          className="bg-neutral-100 px-6 py-20 text-neutral-950"
+        >
           <div className="mx-auto max-w-7xl">
             <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <div>
@@ -214,7 +224,7 @@ export default function RecoveryRebuiltWebsite() {
                 return (
                   <Card
                     key={division.name}
-                    className="rounded-3xl border-neutral-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
+                    className="rounded-3xl border border-neutral-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
                   >
                     <CardContent className="p-7">
                       <Icon
@@ -273,7 +283,10 @@ export default function RecoveryRebuiltWebsite() {
           </div>
         </section>
 
-        <section id="scholarship" className="bg-neutral-100 px-6 py-20 text-neutral-950">
+        <section
+          id="scholarship"
+          className="bg-neutral-100 px-6 py-20 text-neutral-950"
+        >
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-10 rounded-[2rem] bg-white p-8 shadow-xl md:grid-cols-[0.9fr_1.1fr] md:items-center md:p-12">
               <div>
@@ -303,7 +316,10 @@ export default function RecoveryRebuiltWebsite() {
           </div>
         </section>
 
-        <section id="workforce" className="bg-white px-6 py-20 text-neutral-950">
+        <section
+          id="workforce"
+          className="bg-white px-6 py-20 text-neutral-950"
+        >
           <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
             <div>
               <p className="mb-3 text-sm font-black uppercase tracking-[0.24em] text-orange-600">
@@ -430,7 +446,10 @@ export default function RecoveryRebuiltWebsite() {
           </div>
         </section>
 
-        <section id="contact" className="bg-neutral-100 px-6 py-20 text-neutral-950">
+        <section
+          id="contact"
+          className="bg-neutral-100 px-6 py-20 text-neutral-950"
+        >
           <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-start">
             <div>
               <p className="mb-3 text-sm font-black uppercase tracking-[0.24em] text-orange-600">

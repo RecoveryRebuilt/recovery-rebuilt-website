@@ -27,28 +27,28 @@ const divisions = [
   {
     name: "RR Concrete",
     description:
-      "Concrete flatwork, driveways, sidewalks, patios, slabs, and skilled labor opportunities built on reliability and pride.",
+      "Driveways, sidewalks, patios, slabs, flatwork, repairs, and concrete labor support completed with dependable crews and attention to detail.",
     icon: HardHat,
     accent: "text-orange-500",
   },
   {
     name: "RR Roofing",
     description:
-      "Roofing, exterior work, repairs, and restoration services built around safety, skill, and dependable crews.",
+      "Roof repairs, exterior improvements, restoration support, and roofing labor services focused on safety, reliability, and clean job sites.",
     icon: Home,
     accent: "text-green-600",
   },
   {
     name: "RR Landscaping",
     description:
-      "Landscaping, outdoor improvements, seasonal maintenance, and property support services that create more pathways to work.",
+      "Landscape installs, property cleanups, seasonal maintenance, outdoor improvements, and curb appeal projects for homes and businesses.",
     icon: Leaf,
     accent: "text-blue-600",
   },
   {
     name: "RR Workforce",
     description:
-      "Recovery-informed workforce support, case management, stabilization, and employment readiness for long-term success.",
+      "Supported employment pathways, job readiness, stabilization support, and workforce partnerships that help people stay reliable and employed.",
     icon: Users,
     accent: "text-purple-600",
   },
@@ -166,7 +166,7 @@ export default function RecoveryRebuiltWebsite() {
                   href="#contact"
                   className="rounded-2xl bg-orange-600 px-7 py-4 text-center text-base font-black uppercase tracking-wide text-white transition hover:bg-orange-500"
                 >
-                  Request Work
+                  Request a Quote
                 </a>
                 <a
                   href="#partners"
@@ -175,6 +175,11 @@ export default function RecoveryRebuiltWebsite() {
                   Partner With Us
                 </a>
               </div>
+
+              <p className="mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-neutral-400">
+                Serving Minnesota homeowners, property owners, partners, and
+                workforce programs.
+              </p>
             </motion.div>
 
             <motion.div
@@ -205,15 +210,16 @@ export default function RecoveryRebuiltWebsite() {
                   One Brand. Many Ways To Build.
                 </p>
                 <h2 className="max-w-3xl text-4xl font-black uppercase tracking-tight md:text-5xl">
-                  A brand system built for growth beyond one trade.
+                  Reliable property services with a bigger purpose.
                 </h2>
               </div>
 
               <p className="max-w-xl text-lg leading-8 text-neutral-600">
-                Recovery Rebuilt is built as one parent brand with multiple
-                service divisions: concrete, roofing, landscaping, and workforce
-                support. Each division creates practical services for customers
-                and real career pathways for workers.
+                Recovery Rebuilt provides practical construction and property
+                services across concrete, roofing, landscaping, and workforce
+                support. Our goal is simple: deliver dependable work for
+                customers while creating real employment pathways for people
+                rebuilding their lives.
               </p>
             </div>
 
